@@ -35,6 +35,10 @@ h1 {
   font-style: normal;
 }
 
+small {
+  color: #4C566A;
+}
+
 .green {
   color: #A3BE8C;
 }

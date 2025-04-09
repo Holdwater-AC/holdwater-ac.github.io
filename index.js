@@ -1,24 +1,24 @@
-const loadPartial = (partialName) => {
-  const el = document.getElementById(partialName);
-  const partials = {
-   'update':
-      fetch(`${partialName}.html`)
-        .then(response => response.text())
-        .then(html => {
-          el.innerHTML = html;
-        })
-        .catch(error => {
-          console.error(`Error loading ${partialName}:`, error);
-        })
-  };
+import { stat } from 'fs/promises';
 
-  el.innerHTML = partials[partialName];
+const loadUpdate = () => {
+  const el = document.getElementById('update');
+  const update =
+    fetch(`update.html`)
+      .then(response => response.text())
+      .then(html => {
+        el.innerHTML = html;
+      })
+      .catch(error => {
+        console.error(`Error loading`, error);
+      });
 
-  const num = parseFloat(el.textContent);
-  const className = num < 0 ? 'red' : 'green';
+  el.innerHTML = update;
+
+  const num = parseFloat(update);
+  const name = num < 0 ? 'red' : 'green';
   const indicator = num < 0 ? '-' : '+';
   
-  el.classList.add(className);
+  el.classList.add(name);
   el.textContent = indicator + formatNumber(num) + '%';
 };
 
@@ -30,5 +30,8 @@ const formatNumber = (num) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadPartial('update');
+  loadUpdate();
+
+  const stats = await stat('update.html');
+  console.log(stats.mtime);
 });
