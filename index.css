@@ -53,10 +53,11 @@ a {
 .footer {
   margin-top: 2em;
   padding-top: 1em;
+  color: #4C566A;
 }
 
 #timestamp {
-  color: #81A1C1;
+  color: #4C566A;
 }
 
 .red {
