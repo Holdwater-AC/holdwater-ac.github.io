@@ -16,14 +16,14 @@ const load = (name, callback) => {
   el.innerHTML = content;
 };
 
-const styleUpdate = () => {
-  const el = document.getElementById('update');
-  const num = parseFloat(el.textContent);
-  const name = num < 0 ? 'red' : 'green';
-  const indicator = num < 0 ? '-' : '+';
+const stylePosition = () => {
+  const el = document.getElementById('position');
+  const int = parseFloat(el.textContent);
+  const name = int < 0 ? 'red' : 'green';
+  const i = int < 0 ? '-' : '+';
   
   el.classList.add(name);
-  el.textContent = indicator + formatNumber(num) + '%';
+  el.textContent = i + formatNumber(int) + '%';
 };
 
 const formatNumber = (num) => {
@@ -35,7 +35,7 @@ const formatNumber = (num) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   load('micro');
-  load('update', () =>{
-    styleUpdate();
+  load('position', () =>{
+    stylePosition();
   });
 });
