@@ -44,7 +44,7 @@ set change_int (string replace -r '%$' '' $change)
 echo "$change_int" >position.html
 
 read -P "microblog entry: " -t 6000 micro
-set latest "<p><span id='timestamp'>$timestamp</span> $micro</p>\n"
+set latest "<p><span class='timestamp'>$timestamp</span> $micro</p>\n"
 echo -e "$latest $(cat micro.html)" >micro.html
 
 rm "$tmp"
