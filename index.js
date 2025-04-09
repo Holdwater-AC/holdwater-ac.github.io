@@ -19,7 +19,7 @@ const load = (name, callback) => {
 const styleUpdate = () => {
   const el = document.getElementById('update');
   const num = parseFloat(el.textContent);
-  const name = num < 0 ? 'red' : '';
+  const name = num < 0 ? 'red' : 'green';
   const indicator = num < 0 ? '-' : '+';
   
   el.classList.add(name);
