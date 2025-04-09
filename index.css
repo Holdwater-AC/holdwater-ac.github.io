@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/Inter_18pt-Light.ttf') format('truetype'),
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('assets/PlayfairDisplay-Medium.ttf') format('truetype'),
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121313;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #ECEFF4;
+}
+
+h1 {
+  font-family: "Playfair", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.green {
+  color: #A3BE8C;
+}
