@@ -14,15 +14,12 @@ const loadPartial = (partialName) => {
 
   el.innerHTML = partials[partialName];
 
-  const element = document.getElementById('change');
-  if (element) {
-    const num = parseFloat(element.textContent);
-    const className = num < 0 ? 'red' : 'green';
-    const indicator = num < 0 ? '-' : '+';
-    
-    element.classList.add(className);
-    element.textContent = indicator + formatNumber(num) + '%';
-  }
+  const num = parseFloat(el.textContent);
+  const className = num < 0 ? 'red' : 'green';
+  const indicator = num < 0 ? '-' : '+';
+  
+  el.classList.add(className);
+  el.textContent = indicator + formatNumber(num) + '%';
 };
 
 const formatNumber = (num) => {
