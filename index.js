@@ -1,10 +1,13 @@
-const load = (name) => {
+const load = (name, callback) => {
   const el = document.getElementById(name);
   const content =
     fetch(`${name}.html`)
       .then(response => response.text())
       .then(html => {
         el.innerHTML = html;
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       })
       .catch(error => {
         console.error(`Error loading ${name}`, error);
@@ -15,8 +18,6 @@ const load = (name) => {
 
 const styleUpdate = () => {
   const el = document.getElementById('update');
-  console.log(el.textContent);
-
   const num = parseFloat(el.textContent);
   const name = num < 0 ? 'red' : 'green';
   const indicator = num < 0 ? '-' : '+';
@@ -33,7 +34,8 @@ const formatNumber = (num) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  load('update');
   load('timestamp');
-  styleUpdate();
+  load('update', () =>{
+    styleUpdate();
+  });
 });
