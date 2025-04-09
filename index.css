@@ -36,7 +36,7 @@ h1 {
   color: #81A1C1;
 }
 
-a, small {
+a {
   color: #4C566A;
 }
 
@@ -47,6 +47,11 @@ a, small {
 .micro {
   margin-top: 2em;
   border-top: 1px solid #4C566A;
+  padding-top: 1em;
+}
+
+.footer {
+  margin-top: 2em;
   padding-top: 1em;
 }
 
