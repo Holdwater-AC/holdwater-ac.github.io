@@ -1,3 +1,3 @@
-# holdwater-ac
+# holdwater
 
-Requires `update.fish` to populate `timestamp.html` and `update.html`.
+Requires some env vars.
