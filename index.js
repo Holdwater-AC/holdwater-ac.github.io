@@ -1,18 +1,28 @@
 const loadPartial = (partialName) => {
-  const contentDiv = document.getElementById(partialName);
+  const el = document.getElementById(partialName);
   const partials = {
    'update':
       fetch(`${partialName}.html`)
         .then(response => response.text())
         .then(html => {
-          contentDiv.innerHTML = html;
+          el.innerHTML = html;
         })
         .catch(error => {
           console.error(`Error loading ${partialName}:`, error);
         })
   };
 
-  contentDiv.innerHTML = partials[partialName];
+  el.innerHTML = partials[partialName];
+
+  const element = document.getElementById('change');
+  if (element) {
+    const num = parseFloat(element.textContent);
+    const className = num < 0 ? 'red' : 'green';
+    const indicator = num < 0 ? '-' : '+';
+    
+    element.classList.add(className);
+    element.textContent = indicator + formatNumber(num) + '%';
+  }
 };
 
 const formatNumber = (num) => {
