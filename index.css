@@ -35,13 +35,17 @@ h1 {
   font-style: normal;
 }
 
-.footer {
+a {
+  color: #81A1C1;
+}
+
+.micro {
   margin-top: 2em;
   border-top: 1px solid #4C566A;
   padding-top: 1em;
 }
 
-small {
+#timestamp {
   color: #4C566A;
 }
 
