@@ -38,11 +38,4 @@ document.addEventListener('DOMContentLoaded', () => {
   load('update', () =>{
     styleUpdate();
   });
-
-  setInterval(() => {
-    load('timestamp');
-    load('update', () => {
-      styleUpdate();
-    });
-  }, 30000);
 });
