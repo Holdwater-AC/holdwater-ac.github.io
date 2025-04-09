@@ -1,5 +1,3 @@
-import { stat } from 'fs/promises';
-
 const loadUpdate = () => {
   const el = document.getElementById('update');
   const update =
@@ -31,7 +29,4 @@ const formatNumber = (num) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadUpdate();
-
-  const stats = await stat('update.html');
-  console.log(stats.mtime);
 });
