@@ -34,7 +34,7 @@ const formatNumber = (num) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  load('timestamp');
+  load('micro');
   load('update', () =>{
     styleUpdate();
   });
