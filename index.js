@@ -1,34 +1,23 @@
-const loadTimestamp = () => {
-  const el = document.getElementById('timestamp');
-  const timestamp =
-    fetch(`timestamp.html`)
+const load = (name) => {
+  const el = document.getElementById(name);
+  const content =
+    fetch(`${name}.html`)
       .then(response => response.text())
       .then(html => {
         el.innerHTML = html;
       })
       .catch(error => {
-        console.error(`Error loading`, error);
+        console.error(`Error loading ${name}`, error);
       });
 
-  el.innerHTML = timestamp;
+  el.innerHTML = content;
 };
 
-const loadUpdate = () => {
+const styleUpdate = () => {
   const el = document.getElementById('update');
-  const update =
-    fetch(`update.html`)
-      .then(response => response.text())
-      .then(html => {
-        el.innerHTML = html;
-      })
-      .catch(error => {
-        console.error(`Error loading`, error);
-      });
+  console.log(el.textContent);
 
-  el.innerHTML = update;
-  console.log(update);
-
-  const num = parseFloat(update);
+  const num = parseFloat(el.textContent);
   const name = num < 0 ? 'red' : 'green';
   const indicator = num < 0 ? '-' : '+';
   
@@ -44,5 +33,6 @@ const formatNumber = (num) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadUpdate();
+  load('update');
+  load('timestamp');
 });
