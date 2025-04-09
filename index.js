@@ -35,4 +35,5 @@ const formatNumber = (num) => {
 document.addEventListener('DOMContentLoaded', () => {
   load('update');
   load('timestamp');
+  styleUpdate();
 });
